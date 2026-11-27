@@ -96,11 +96,13 @@ Learn more: https://skills.sh/vercel-labs/agent-skills/react-best-practices
 
 If the user wants to proceed, you can install the skill for them:
 
+Before installing, fetch and read the skill's full SKILL.md (and any scripts it ships) and tell the user what it does. Then install it at project level, without `-g` or `-y`:
+
 ```bash
-npx skills add <owner/repo@skill> -g -y
+npx skills add <owner/repo@skill>
 ```
 
-The `-g` flag installs globally (user-level) and `-y` skips confirmation prompts.
+This project runs in ephemeral cloud containers: a global (`-g`) install is lost when the session ends, so install into the repo's `.claude/skills/` and commit it. Never skip confirmation (`-y`) on a skill nobody has reviewed.
 
 ## Common Skill Categories
 
